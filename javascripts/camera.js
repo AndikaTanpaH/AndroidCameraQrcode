@@ -73,7 +73,12 @@ function start() {
 }
 
 //audioSelect.onchange = start;
-audioSelect.onchange = alert('hello');
-videoSelect.onchange = start;
+//audioSelect.onchange = alert('hello');
+//videoSelect.onchange = start;
+
+function myFunction(){
+  alert ('hello');
+  
+}
 
 //start();
