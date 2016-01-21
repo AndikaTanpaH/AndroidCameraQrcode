@@ -77,8 +77,9 @@ function start() {
   
   var videoX = document.querySelector('video');
   var once = true;
+  
   QCodeDecoder()
-    .decodeFromVideo(video, function (err, result) {
+    .decodeFromVideo(videoX, function (err, result) {
       if (err) throw err;
       alert(result);
       document.getElementById("dataMe").innerHTML = result;
