@@ -50,6 +50,8 @@ function start() {
   var audioSource = audioSelect.value;
   var videoSource = videoSelect.value;
   var constraints = {
+    maxWidth: 400,
+    maxHeight: 400,
     audio: {
       optional: [{
         sourceId: audioSource
@@ -66,7 +68,7 @@ function start() {
   //navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
 }
 
-audioSelect.onchange = start;
+//audioSelect.onchange = start;
 videoSelect.onchange = start;
 
-start();
+//start();
