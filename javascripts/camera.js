@@ -55,12 +55,12 @@ function start() {
         minWidth: 400,
         minHeight: 400
       }
-    }
-    audio: {
+    },
+    /*audio: {
       optional: [{
         sourceId: audioSource
       }]
-    },
+    },*/
     video: {
       optional: [{
         sourceId: videoSource
