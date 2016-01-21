@@ -49,11 +49,11 @@ function errorCallback(error) {
 }
 
 function start() {
-  if (window.stream) {
+  if (!!window.stream) {
     videoElement.src = null;
     window.stream.stop();
   }
-  var audioSource = audioSelect.value;
+  //var audioSource = audioSelect.value;
   var videoSource = videoSelect.value;
   var constraints = {
     video: {
