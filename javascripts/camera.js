@@ -78,7 +78,8 @@ function start() {
 
 function myFunction(){
   alert ('hello');
-  
+  var audioSource = audioSelect.value;
+  document.getElementById("selectMe").innerHTML = audioSource;
 }
 
 //start();
