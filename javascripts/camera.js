@@ -50,8 +50,12 @@ function start() {
   var audioSource = audioSelect.value;
   var videoSource = videoSelect.value;
   var constraints = {
-    maxWidth: 400,
-    maxHeight: 400,
+    video: {
+      mandatory: {
+        minWidth: 400,
+        minHeight: 400
+      }
+    }
     audio: {
       optional: [{
         sourceId: audioSource
