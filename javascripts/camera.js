@@ -4,6 +4,8 @@ var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 
+var logMe=document.getElementById("logSource");
+
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -16,9 +18,13 @@ function gotSources(sourceInfos) {
       option.text = sourceInfo.label || 'microphone ' +
         (audioSelect.length + 1);
       audioSelect.appendChild(option);
+      
+      logMe.innerHTML += '<br/>Audio: '+sourceInfo.id;
     } else if (sourceInfo.kind === 'video') {
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
       videoSelect.appendChild(option);
+      
+      logMe.innerHTML += '<br/>Video: '+sourceInfo.id;
     } else {
       console.log('Some other kind of source: ', sourceInfo);
     }
