@@ -74,6 +74,16 @@ function start() {
     }
   };
   navigator.getUserMedia(constraints, successCallback, errorCallback);
+  
+  var videoX = document.querySelector('video');
+  var once = true;
+  QCodeDecoder()
+    .decodeFromVideo(video, function (err, result) {
+      if (err) throw err;
+      //alert(result);
+      document.getElementById("dataMe").innerHTML = result;
+    }, once);
+    
   //webkit=true;
   //navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
 }
