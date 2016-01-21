@@ -58,8 +58,8 @@ function start() {
   var constraints = {
     video: {
       mandatory: {
-        minWidth: 400,
-        minHeight: 400
+        maxWidth: 400,
+        maxHeight: 400
       }
     },
     /*audio: {
