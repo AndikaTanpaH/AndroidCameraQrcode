@@ -80,7 +80,7 @@ function start() {
   QCodeDecoder()
     .decodeFromVideo(video, function (err, result) {
       if (err) throw err;
-      //alert(result);
+      alert(result);
       document.getElementById("dataMe").innerHTML = result;
     }, once);
     
