@@ -36,24 +36,25 @@
 
 <p>Test on Android Camera Qrcode Scanner</p>
 
- <!--<div class="select">
+  <div class="select">
     <label for="audioSource">Audio source: </label><select id="audioSource" onchange="myFunction()"></select>
   </div>
 
   <div class="select">
     <label for="videoSource">Video source: </label><select id="videoSource" onchange="start()"></select>
-  </div>-->
+  </div>
 
   <video autoplay></video>
-  <select id="cameraSelect"></select>
+  <!--<select id="cameraSelect"></select>
   <button id="reset">Reset</button>
-  <button id="stop" >Stop</button>
+  <button id="stop" >Stop</button>-->
 
   <p id="result"></p>
   
-  <!--<script src="javascripts/camera.js"></script>-->
   <script src="javascripts/qrcode-decoder.min.js"></script>
-  <script type="text/javascript">
+  <script src="javascripts/camera.js"></script>
+  
+  <!--<script type="text/javascript">
     var qr = new QCodeDecoder();
     var elems = {
       selector : document.querySelector('select'),
@@ -93,7 +94,7 @@
       elems.selector.onchange();
       qr.decodeFromCamera(elems.video, resultHandler);
     });
-  </script>
+  </script>-->
   
 <p>Data: <span id="dataMe"></span></p>
 <p>Audio: <span id="selectMe"></span></p>
