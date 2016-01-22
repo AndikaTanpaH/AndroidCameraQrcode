@@ -79,6 +79,10 @@ function myFunction(){
 }
 
 function successCallbackVideo(stream) {
+  if(window.stream.active) {
+    var track = stream.getTracks()[0];
+    track.stop();
+  }
   window.stream = stream; // make stream available to console
   var videoElement = document.querySelector('video');
   videoElement.src = window.URL.createObjectURL(stream);
@@ -91,10 +95,13 @@ $(function(){
     //console.log( $( this ).text() );
     //alert ($( this ).val());
     var camid=$( this ).val();
-    if(window.stream) {
+    //if(window.stream) {
+    //if(window.stream.active) {
       //videoElement.src = null;
-      window.stream.stop();
-    }
+      //window.stream.stop();
+      //var track = stream.getTracks()[0];
+      //track.stop();
+   // }
     $('vidframe').empty();
     $('vidframe').append('<video autoplay></video>');
     
