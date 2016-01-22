@@ -79,7 +79,11 @@ function myFunction(){
 }
 
 $(function(){
-  alert ('hello jquery');
+  //alert ('hello jquery');
+  $( '.goPlay' ).on( 'click', 'button', function() {
+    //console.log( $( this ).text() );
+    alert ($( this ).val());
+  });
 });
 
 //start();
