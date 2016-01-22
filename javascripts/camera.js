@@ -87,10 +87,14 @@ function successCallbackVideo(stream) {
 
 $(function(){
   //alert ('hello jquery');
-  $( '.goPlay' ).on( 'click', 'button', function() {
+  $('.goPlay').on( 'click', 'button', function() {
     //console.log( $( this ).text() );
     //alert ($( this ).val());
     var camid=$( this ).val();
+    if(window.stream) {
+      //videoElement.src = null;
+      window.stream.stop();
+    }
     $('vidframe').empty();
     $('vidframe').append('<video autoplay></video>');
     
