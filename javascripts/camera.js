@@ -1,7 +1,7 @@
 'use strict';
 
 var videoElement = document.querySelector('video');
-var audioSelect = document.querySelector('select#audioSource');
+//var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 
 
@@ -86,7 +86,7 @@ function successCallbackVideo(stream) {
   window.stream = stream; // make stream available to console
   var videoElement = document.querySelector('video');
   videoElement.src = window.URL.createObjectURL(stream);
-  videoElement.play();
+  //videoElement.play();
 }
 
 $(function(){
