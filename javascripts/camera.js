@@ -93,6 +93,14 @@ function successCallbackVideo(stream) {
   //videoElement.play();
 }
 
+var qr = new QCodeDecoder();
+
+function resultHandler (err, result) {
+      if (err)
+        return console.log(err.message);
+      alert(result);
+    }
+
 $(function(){
   //alert ('hello jquery');
   $('.goPlay').on( 'click', 'button', function() {
@@ -114,7 +122,9 @@ $(function(){
         }]
       }
     };
-    navigator.getUserMedia(constraints, successCallbackVideo, errorCallback);
     
+    navigator.getUserMedia(constraints, successCallbackVideo, errorCallback);
+    var viddom= $('.vidframe video');
+    qr.decodeFromCamera(viddom, resultHandler);
   });
 });
