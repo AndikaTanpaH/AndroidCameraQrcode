@@ -126,7 +126,7 @@ $(function(){
     navigator.getUserMedia(constraints, successCallbackVideo, errorCallback);
     var viddom= document.querySelector('video');
     //qr.decodeFromCamera(viddom, resultHandler);
-    qr.decodeFromVideo(videoX, function (err, result) {
+    qr.decodeFromVideo(viddom, function (err, result) {
       if (err) throw err;
       alert(result);
       document.getElementById("dataMe").innerHTML = result;
