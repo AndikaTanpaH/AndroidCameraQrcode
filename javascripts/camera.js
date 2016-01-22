@@ -124,7 +124,7 @@ $(function(){
     };
     
     navigator.getUserMedia(constraints, successCallbackVideo, errorCallback);
-    var viddom= $('.vidframe video');
+    var viddom= document.querySelector('video');
     qr.decodeFromCamera(viddom, resultHandler);
   });
 });
