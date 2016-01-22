@@ -78,11 +78,36 @@ function myFunction(){
   document.getElementById("selectMe").innerHTML = audioSource;
 }
 
+function successCallbackVideo(stream) {
+  window.stream = stream; // make stream available to console
+  var videoElement = document.querySelector('video');
+  videoElement.src = window.URL.createObjectURL(stream);
+  videoElement.play();
+}
+
 $(function(){
   //alert ('hello jquery');
   $( '.goPlay' ).on( 'click', 'button', function() {
     //console.log( $( this ).text() );
-    alert ($( this ).val());
+    //alert ($( this ).val());
+    var camid=$( this ).val();
+    $('vidframe').empty();
+    $('vidframe').append('<video autoplay></video>');
+    
+    var videoSource = camid;
+    var constraints = {
+      video: {
+        mandatory: {
+          maxWidth: 640,
+          maxHeight: 640
+        },
+        optional: [{
+          sourceId: videoSource
+        }]
+      }
+    };
+    navigator.getUserMedia(constraints, successCallbackVideo, errorCallback);
+    
   });
 });
 
