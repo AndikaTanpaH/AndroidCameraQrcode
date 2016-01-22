@@ -87,6 +87,7 @@ function successCallbackVideo(stream) {
   var videoElement = document.querySelector('video');
   videoElement.src = window.URL.createObjectURL(stream);
   
+  $('.vidframe video').get(0).play()
   //var track = stream.getTracks()[0];
   //stream.getTracks()[0].play();
   //videoElement.play();
