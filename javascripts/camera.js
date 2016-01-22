@@ -79,7 +79,7 @@ function myFunction(){
 }
 
 function successCallbackVideo(stream) {
-  if(window.stream.active) {
+  if(window.stream) {
     var track = stream.getTracks()[0];
     track.stop();
   }
