@@ -11,11 +11,11 @@ navigator.getUserMedia = navigator.getUserMedia ||
 function gotSources(sourceInfos) {
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
-    //var option = document.createElement('option');
-    //option.value = sourceInfo.id;
+    //var option = document.createElement('option'); //delete
+    //option.value = sourceInfo.id; //delete
     if (sourceInfo.kind === 'video') {
-      //option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
-      //videoSelect.appendChild(option);
+      //option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1); //delete
+      //videoSelect.appendChild(option); //delete
       $('.goPlay').append('<button value="'+sourceInfo.id+'">'+sourceInfo.label+'</button>');
       document.getElementById("logSource").innerHTML += '<br/>Video: '+sourceInfo.id;
     }
