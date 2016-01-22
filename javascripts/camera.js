@@ -102,8 +102,8 @@ $(function(){
       //var track = stream.getTracks()[0];
       //track.stop();
    // }
-    $('vidframe').empty();
-    $('vidframe').append('<video autoplay></video>');
+    $('.vidframe').empty();
+    $('.vidframe').append('<video autoplay></video>');
     
     var videoSource = camid;
     var constraints = {
