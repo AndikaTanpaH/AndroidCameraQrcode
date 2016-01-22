@@ -89,14 +89,14 @@ function start() {
   //navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
 }
 
-//audioSelect.onchange = start;
-//audioSelect.onchange = alert('hello');
-//videoSelect.onchange = start;
-
 function myFunction(){
   alert ('hello');
   var audioSource = audioSelect.value;
   document.getElementById("selectMe").innerHTML = audioSource;
 }
+
+$(function(){
+  alert ('hello jquery');
+});
 
 //start();
