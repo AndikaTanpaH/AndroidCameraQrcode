@@ -86,22 +86,18 @@ function successCallbackVideo(stream) {
   window.stream = stream; // make stream available to console
   var videoElement = document.querySelector('video');
   videoElement.src = window.URL.createObjectURL(stream);
+  
+  var track = stream.getTracks()[0];
+  track.play();
   //videoElement.play();
 }
 
 $(function(){
   //alert ('hello jquery');
   $('.goPlay').on( 'click', 'button', function() {
-    //console.log( $( this ).text() );
     //alert ($( this ).val());
     var camid=$( this ).val();
-    //if(window.stream) {
-    //if(window.stream.active) {
-      //videoElement.src = null;
-      //window.stream.stop();
-      //var track = stream.getTracks()[0];
-      //track.stop();
-   // }
+
     $('.vidframe').empty();
     $('.vidframe').append('<video autoplay></video>');
     
@@ -121,5 +117,3 @@ $(function(){
     
   });
 });
-
-//start(); test
