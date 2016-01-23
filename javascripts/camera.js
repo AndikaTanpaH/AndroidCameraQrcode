@@ -64,8 +64,9 @@ $(function(){
     var constraints = {
       video: {
         mandatory: {
-          minWidth: 640,
+          maxWidth: 640,
           minHeight: 640,
+          minAspectRatio: 1.333,
           maxAspectRatio: 1.334
           //aspectRatio: 1.33333333333
         },
