@@ -31,11 +31,7 @@ function errorCallback(error) {
 }
 
 function successCallbackVideo(stream) {
-  /*if(window.stream) {
-    var track = stream.getTracks()[0];
-    track.stop();
-  }
-  window.stream = stream;*/ // make stream available to console
+
   var videoElement = document.querySelector('video');
   videoElement.src = window.URL.createObjectURL(stream);
   
@@ -68,20 +64,16 @@ $(function(){
           minHeight: 640,
           minAspectRatio: 1.333,
           maxAspectRatio: 1.334
-          //aspectRatio: 1.33333333333
         },
         optional: [
           { sourceId: videoSource }
-          //{ aspectRatio: 1.33333333333 }
-          //{ facingMode: { exact: 'environment' } }
-          //{ facingMode: 'user' } //user (back) / environment (front)
         ]
       }
     };
-    //{ sourceId: videoSource },
+    
     navigator.getUserMedia(constraints, successCallbackVideo, errorCallback);
     var viddom= document.querySelector('video');
-    //qr.decodeFromCamera(viddom, resultHandler);
+
     qr.decodeFromVideo(viddom, function (err, result) {
       //if (err) throw err;
       if (err) alert(err);
