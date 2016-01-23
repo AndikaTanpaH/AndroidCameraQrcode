@@ -12,7 +12,7 @@ function gotSources(sourceInfos) {
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
 
-    if (sourceInfo.kind === 'video') {
+    if (sourceInfo.kind === 'video' && sourceInfo.facing === 'environment') {
       $('.goPlay').append('<button value="'+sourceInfo.id+'">'+sourceInfo.label+'</button>');
       document.getElementById("logSource").innerHTML += '<br/>Video: '+sourceInfo.id;
     }
