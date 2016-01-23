@@ -114,8 +114,8 @@ $(function(){
           maxHeight: 640
         },
         optional: [
-          
-          { facingMode: 'user' } //user (back) / environment (front)
+          { facingMode: { exact: 'user' } }
+          //{ facingMode: 'user' } //user (back) / environment (front)
         ]
       }
     };
