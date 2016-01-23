@@ -61,7 +61,7 @@ $(function(){
       video: {
         mandatory: {
           maxWidth: 640,
-          minHeight: 640,
+          maxWidth: 640,
           minAspectRatio: 1.333,
           maxAspectRatio: 1.334
         },
