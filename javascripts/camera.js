@@ -115,7 +115,7 @@ $(function(){
         },
         optional: [
           
-          { facingMode: 'environment' }
+          { facingMode: 'user' } //user (back) / environment (front)
         ]
       }
     };
