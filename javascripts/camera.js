@@ -60,8 +60,8 @@ $(function(){
     var constraints = {
       video: {
         mandatory: {
-          maxWidth: 640,
-          maxWidth: 640,
+          maxWidth: 720,
+          maxWidth: 720,
           minAspectRatio: 1.333,
           maxAspectRatio: 1.334
         },
