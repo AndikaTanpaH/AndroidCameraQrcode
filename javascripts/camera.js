@@ -1,7 +1,6 @@
 'use strict';
 
 var videoElement = document.querySelector('video');
-//var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 
 
@@ -11,11 +10,8 @@ navigator.getUserMedia = navigator.getUserMedia ||
 function gotSources(sourceInfos) {
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
-    //var option = document.createElement('option'); //delete
-    //option.value = sourceInfo.id; //delete
+
     if (sourceInfo.kind === 'video') {
-      //option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1); //delete
-      //videoSelect.appendChild(option); //delete
       $('.goPlay').append('<button value="'+sourceInfo.id+'">'+sourceInfo.label+'</button>');
       document.getElementById("logSource").innerHTML += '<br/>Video: '+sourceInfo.id;
     }
@@ -117,12 +113,13 @@ $(function(){
           maxWidth: 640,
           maxHeight: 640
         },
-        optional: [{
-          sourceId: videoSource
-        }]
+        optional: [
+          
+          { facingMode: 'environment' }
+        ]
       }
     };
-    
+    //{ sourceId: videoSource },
     navigator.getUserMedia(constraints, successCallbackVideo, errorCallback);
     var viddom= document.querySelector('video');
     //qr.decodeFromCamera(viddom, resultHandler);
