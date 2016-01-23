@@ -130,7 +130,7 @@ $(function(){
       if (err) alert(err);
       
       alert(result);
-      document.getElementById("dataMe").innerHTML = result;
-    }, true);
+      document.getElementById("dataMe").innerHTML += result;
+    }, false);
   });
 });
