@@ -115,7 +115,8 @@ $(function(){
           maxHeight: 640
         },
         optional: [
-          { sourceId: videoSource }
+          { sourceId: videoSource },
+          { aspectRatio: 1.33333333333 }
           //{ facingMode: { exact: 'environment' } }
           //{ facingMode: 'user' } //user (back) / environment (front)
         ]
