@@ -115,7 +115,8 @@ $(function(){
           maxHeight: 640
         },
         optional: [
-          { facingMode: { exact: 'environment' } }
+          { sourceId: videoSource }
+          //{ facingMode: { exact: 'environment' } }
           //{ facingMode: 'user' } //user (back) / environment (front)
         ]
       }
