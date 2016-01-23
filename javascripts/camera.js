@@ -26,53 +26,8 @@ if (typeof MediaStreamTrack === 'undefined' ||
   MediaStreamTrack.getSources(gotSources);
 }
 
-function successCallback(stream) {
-  window.stream = stream; // make stream available to console
-  videoElement.src = window.URL.createObjectURL(stream);
-  videoElement.play();
-}
-
 function errorCallback(error) {
   console.log('navigator.getUserMedia error: ', error);
-}
-
-function start() {
-  if (!!window.stream) {
-    videoElement.src = null;
-    window.stream.stop();
-  }
-  //var audioSource = audioSelect.value;
-  var videoSource = videoSelect.value;
-  var constraints = {
-    video: {
-      mandatory: {
-        maxWidth: 400,
-        maxHeight: 400
-      }
-    },
-    video: {
-      optional: [{
-        sourceId: videoSource
-      }]
-    }
-  };
-  navigator.getUserMedia(constraints, successCallback, errorCallback);
-  
-  var videoX = document.querySelector('video');
-  var once = true;
-  
-  QCodeDecoder()
-    .decodeFromVideo(videoX, function (err, result) {
-      if (err) throw err;
-      alert(result);
-      document.getElementById("dataMe").innerHTML = result;
-    }, once);
-}
-
-function myFunction(){
-  alert ('hello');
-  var audioSource = audioSelect.value;
-  document.getElementById("selectMe").innerHTML = audioSource;
 }
 
 function successCallbackVideo(stream) {
@@ -99,9 +54,7 @@ function resultHandler (err, result) {
     }
 
 $(function(){
-  //alert ('hello jquery');
   $('.goPlay').on( 'click', 'button', function() {
-    //alert ($( this ).val());
     var camid=$( this ).val();
 
     $('.vidframe').empty();
@@ -112,11 +65,12 @@ $(function(){
       video: {
         mandatory: {
           maxWidth: 640,
-          maxHeight: 640
+          maxHeight: 640,
+          aspectRatio: 1.33333333333
         },
         optional: [
-          { sourceId: videoSource },
-          { aspectRatio: 1.33333333333 }
+          { sourceId: videoSource }
+          //{ aspectRatio: 1.33333333333 }
           //{ facingMode: { exact: 'environment' } }
           //{ facingMode: 'user' } //user (back) / environment (front)
         ]
