@@ -31,15 +31,15 @@ function errorCallback(error) {
 }
 
 function successCallbackVideo(stream) {
-  if(window.stream) {
+  /*if(window.stream) {
     var track = stream.getTracks()[0];
     track.stop();
   }
-  window.stream = stream; // make stream available to console
+  window.stream = stream;*/ // make stream available to console
   var videoElement = document.querySelector('video');
   videoElement.src = window.URL.createObjectURL(stream);
   
-  $('.vidframe video').get(0).play()
+  //$('.vidframe video').get(0).play()
   //var track = stream.getTracks()[0];
   //stream.getTracks()[0].play();
   //videoElement.play();
