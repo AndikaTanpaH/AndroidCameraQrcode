@@ -8,7 +8,7 @@ navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 function gotSources(sourceInfos) {
-  console.log(sourceInfos);
+  //console.log(sourceInfos);
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
 
@@ -66,6 +66,7 @@ $(function(){
         mandatory: {
           minWidth: 640,
           minHeight: 640,
+          maxAspectRatio: 1.334
           //aspectRatio: 1.33333333333
         },
         optional: [
